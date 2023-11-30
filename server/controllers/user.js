@@ -1,6 +1,12 @@
 import User from "../model/User.js";
-export const fetchUsers = (req, res) => {
-  res.send("This is all users route");
+export const fetchUsers = async (req, res) => {
+  try {
+    const users = await User.find().lean();
+    const otherData = users.map(({ password, ...users }) => users);
+    res.send(otherData);
+  } catch (err) {
+    res.status(500).send({ message: "Server Error" });
+  }
 };
 export const saveUser = async (req, res) => {
   const { name, email, username, pass } = req.body;
