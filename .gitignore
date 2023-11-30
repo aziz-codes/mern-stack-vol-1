@@ -1,4 +1,35 @@
-/client/react-crud/node_modules
-/server/node_modules
-/server/env
-/client/env
+# Ignore .env files
+*.env
+
+# Ignore node_modules directory (common for Node.js projects)
+node_modules/
+
+# Ignore build outputs
+/build/
+/dist/
+/out/
+
+# Ignore any logs or generated files
+logs/
+*.log
+*.log*
+npm-debug.log*
+
+# Ignore local configuration
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore yarn.lock or npm-shrinkwrap.json files
+yarn.lock
+npm-shrinkwrap.json
+
+# Ignore client build output
+/client/build/
+
+# Ignore server build output
+/server/build/
+/server/dist/
+/server/out/
+server/.env
