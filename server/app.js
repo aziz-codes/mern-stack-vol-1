@@ -5,7 +5,7 @@ import connectDB from "./connection.js";
 const PORT = 5000;
 
 const app = express();
-connectDB();
+await connectDB();
 app.use(bodyParser.json());
 app.use("/users", useRoutes);
 app.listen(PORT, () => {
